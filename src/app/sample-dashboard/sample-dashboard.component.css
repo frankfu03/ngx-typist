@@ -4,7 +4,7 @@
 }
 
 .dashboard .terminal-header {
-  background-color: #1976d2;
+  background-color: var(--app-color);
   border-radius: 6px 6px 0 0;
   color: #ffffff;
   height: 35px;
@@ -27,7 +27,7 @@
 
 .dashboard .terminal-window {
   background-color: #ffffff;
-  border: 1px solid #1976d2;
+  border: 1px solid var(--app-color);
   border-radius: 0 0 6px 6px;
   color: #333333;
   font-family: 'Courier New', Courier, monospace;

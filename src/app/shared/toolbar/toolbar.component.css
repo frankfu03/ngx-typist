@@ -1,0 +1,36 @@
+.toolbar {
+  align-items: center;
+  background-color: var(--app-color);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  height: var(--toolbar-height);
+  min-height: var(--toolbar-height);
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar .app-title {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.toolbar .app-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.toolbar .right-panel {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.toolbar .btn {
+  background-color: #ffffff;
+  color: var(--app-color);
+}

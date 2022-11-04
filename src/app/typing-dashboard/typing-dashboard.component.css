@@ -4,7 +4,7 @@
 }
 
 .dashboard .terminal-header {
-  background-color: #1976d2;
+  background-color: var(--app-color);
   border-radius: 6px 6px 0 0;
   color: #ffffff;
   display: flex;
@@ -35,7 +35,7 @@
 
 .dashboard .terminal-window {
   background-color: #ffffff;
-  border: 1px solid #1976d2;
+  border: 1px solid var(--app-color);
   border-radius: 0 0 6px 6px;
   color: #333333;
   font-family: 'Courier New', Courier, monospace;
@@ -48,6 +48,22 @@
   overflow-y: auto;
 }
 
-.dashboard .terminal-window .cursor {
-  background-color: #a3d2f8;
+.still-cursor {
+  color: var(--app-color);
+}
+
+.blink-cursor {
+  color: var(--app-color);
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
