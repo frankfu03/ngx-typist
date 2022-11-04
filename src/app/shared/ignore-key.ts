@@ -1,0 +1,21 @@
+export enum IgnoreKey {
+  Alt = 'Alt',
+  Ctrl = 'Control',
+  CapsLock = "CapsLock",
+  Shift = 'Shift',
+  Home = 'Home',
+  End = 'End',
+  Delete = 'Delete',
+  Insert = 'Insert',
+  ShiftLeft = 'ShiftLeft',
+  ShiftRight = 'ShiftRight',
+  ArrowLeft = 'ArrowLeft',
+  ArrowRight = 'ArrowRight',
+  ArrowUp = 'ArrowUp',
+  ArrowDown = 'ArrowDown',
+  PageUp = 'PageUp',
+  PageDown = 'PageDown',
+  // http://unixpapa.com/js/key.html
+  MetaLeft = 'MetaLeft',
+  MetaRight = 'MetaRight',
+}

@@ -1,0 +1,16 @@
+<div class="dashboard">
+  <div class="terminal-header">
+    <span class="title">Typing Window</span>
+    <span class="notes">
+      (Typed: {{typedText.length}};
+      Errors: {{numberOfErrorChars}};
+      WPM: {{ wpm }})
+    </span>
+    <span class="right-img">
+      <app-loading [isRunning]="isRunning"></app-loading>
+    </span>
+  </div>
+  <div class="terminal-window">
+    {{ typedText }}<span class="cursor">&nbsp;</span>
+  </div>
+</div>

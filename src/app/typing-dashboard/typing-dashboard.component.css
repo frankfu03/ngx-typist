@@ -1,0 +1,53 @@
+.dashboard {
+  margin: 10px 10px 0 10px;
+  padding: 0;
+}
+
+.dashboard .terminal-header {
+  background-color: #1976d2;
+  border-radius: 6px 6px 0 0;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  line-height: 2rem;
+  text-indent: 10px;
+}
+
+.dashboard .terminal-header .title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.dashboard .terminal-header .notes {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.dashboard .terminal-header .right-img {
+  margin-left: auto;
+  margin-right: 16px;
+  padding: 3px 0;
+}
+
+.dashboard .terminal-window {
+  background-color: #ffffff;
+  border: 1px solid #1976d2;
+  border-radius: 0 0 6px 6px;
+  color: #333333;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  font-stretch: expanded;
+  height: 200px;
+  line-height: 1.6rem;
+  margin: 0;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.dashboard .terminal-window .cursor {
+  background-color: #a3d2f8;
+}
