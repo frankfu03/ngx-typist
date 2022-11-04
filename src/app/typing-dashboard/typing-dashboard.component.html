@@ -11,6 +11,6 @@
     </span>
   </div>
   <div class="terminal-window">
-    {{ typedText }}<span class="cursor">&nbsp;</span>
+    {{ typedText }}<span [ngClass]="isRunning ? 'blink-cursor' : 'still-cursor'">|</span>
   </div>
 </div>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'ngx typist';
+  public appTitle = 'ngx typist';
   public isRunning = false;
 
   public inputText = 'Life is good.';
@@ -29,11 +29,7 @@ export class AppComponent {
   So when our search term changes, we can update the highlights. The interesting part is:
   `;
 
-  public typingSwitch(): void {
-    this.isRunning = !this.isRunning;
-  }
-
-  public getButtonName(): string {
-    return this.isRunning ? "Stop Typing" : "Start Typing"
+  public toggleTyping(running: boolean): void {
+    this.isRunning = running;
   }
 }

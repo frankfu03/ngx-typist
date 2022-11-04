@@ -16,10 +16,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngx-typist'`, () => {
+  it(`should have as an application title 'ngx-typist'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-typist');
+    expect(app.appTitle).toEqual('ngx-typist');
   });
 
   it('should render title', () => {
