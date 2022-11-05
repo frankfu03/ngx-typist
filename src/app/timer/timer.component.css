@@ -1,0 +1,20 @@
+:host {
+  height: 25px;
+}
+
+.timer {
+  border: 1px solid var(--app-color);
+  background-color: #ffffff;
+  color: var(--app-color);
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: 500;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  padding: 5px;
+  position: relative;
+  text-align: right;
+  width: 90px;
+}

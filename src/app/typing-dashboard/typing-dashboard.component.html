@@ -9,8 +9,9 @@
     <span class="right-img">
       <app-loading [isRunning]="isRunning"></app-loading>
     </span>
+    <app-timer></app-timer>
   </div>
   <div class="terminal-window">
-    {{ typedText }}<span [ngClass]="isRunning ? 'blink-cursor' : 'still-cursor'">|</span>
+    {{ typedText }}<span [ngClass]="{'blink-cursor': isRunning, 'still-cursor': !isRunning}">&nbsp;</span>
   </div>
 </div>

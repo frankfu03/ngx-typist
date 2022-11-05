@@ -7,6 +7,7 @@ import { SampleDashboardComponent } from './sample-dashboard/sample-dashboard.co
 import { LoadingComponent } from './shared/loading/loading.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     SampleDashboardComponent,
     LoadingComponent,
     ToolbarComponent,
-    FooterComponent
+    FooterComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule
