@@ -3,6 +3,5 @@
     <span class="title">Sample Text</span>
     <span class="notes">({{ inputText.length }} characters)</span>
   </div>
-  <div class="terminal-window">{{ inputText }}</div>
+  <div class="terminal-window" [innerHTML]="formatText(inputText)"></div>
 </div>
-  

@@ -1,8 +1,15 @@
-<app-toolbar [title]="appTitle" (runningEvent)="toggleTyping($event)"></app-toolbar>
+<app-toolbar [title]="appTitle"
+             (runningEvent)="toggleTyping($event)">
+</app-toolbar>
 
 <div class="main-body" role="main">
-  <app-sample-dashboard [inputText]="inputText"></app-sample-dashboard>
-  <app-typing-dashboard [inputText]="inputText" [isRunning]="isRunning"></app-typing-dashboard>
+  <app-sample-dashboard [inputText]="inputText"
+                        [errorIndexes]="errorIndexes">
+  </app-sample-dashboard>
+  <app-typing-dashboard [inputText]="inputText"
+                        [isRunning]="isRunning"
+                        (errorIndexEvent)="getTypingInfo($event)">
+  </app-typing-dashboard>
 </div>
 
 <app-footer [title]="appTitle"></app-footer>

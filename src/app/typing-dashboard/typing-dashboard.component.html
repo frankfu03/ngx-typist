@@ -3,7 +3,7 @@
     <span class="title">Typing Window</span>
     <span class="notes">
       (Typed: {{typedText.length}};
-      Errors: {{numberOfErrorChars}};
+      Errors: {{errorChars.length}};
       WPM: {{ wpm }})
     </span>
     <span class="right-img">
@@ -11,7 +11,7 @@
     </span>
     <app-timer></app-timer>
   </div>
-  <div class="terminal-window">
-    {{ typedText }}<span [ngClass]="{'blink-cursor': isRunning, 'still-cursor': !isRunning}">&nbsp;</span>
+  <div class="terminal-window" [innerHTML]="formatText(typedText)">
+    <span class="blink-cursor" *ngIf="isRunning">&nbsp;</span>
   </div>
 </div>

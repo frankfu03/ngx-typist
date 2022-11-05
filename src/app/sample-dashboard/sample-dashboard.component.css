@@ -1,20 +1,24 @@
 .dashboard {
-  margin: 10px 10px 0 10px;
-  padding: 0;
+  margin: 0;
+  padding: 16px;
 }
 
 .dashboard .terminal-header {
+  align-items: center;
   background-color: var(--app-color);
   border-radius: 6px 6px 0 0;
   color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   height: 35px;
-  line-height: 2rem;
   text-indent: 10px;
 }
 
 .dashboard .terminal-header .title {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
+  line-height: 1rem;
   font-weight: 700;
 }
 
@@ -22,6 +26,7 @@
   font-family: 'Times New Roman', Times, serif;
   font-size: 1rem;
   font-weight: normal;
+  line-height: 1rem;
   margin-left: 10px;
 }
 
@@ -38,4 +43,10 @@
   margin: 0;
   padding: 10px;
   overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 10px;
+  }
 }

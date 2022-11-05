@@ -1,8 +1,9 @@
-import { Component, EventEmitter,
-         HostListener, Input, OnInit, ViewChild } from '@angular/core';
-import { Key } from './../shared/key';
-import { IgnoreKey} from './../shared/ignore-key';
+import { Component, EventEmitter, HostListener,
+         Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Key } from '../shared/global/key';
+import { IgnoreKey} from '../shared/global/ignore-key';
 import { TimerComponent } from '../timer/timer.component';
+import { Utils } from '../shared/global/utils';
 
 
 @Component({
@@ -18,17 +19,22 @@ export class TypingDashboardComponent implements OnInit {
   @Input()
   public isRunning: boolean = false;
 
+  @Output()
+  errorIndexEvent = new EventEmitter<number[]>();
+
   @ViewChild(TimerComponent)
   private timerComponent!: TimerComponent;
 
   public typedText: string;
   public wpm: number;
-  public numberOfErrorChars: number;
+  public errorChars: Array<string>;
+  public errorIndexes: Array<number>;
   public index: number;
 
   constructor() {
     this.wpm = 0;
-    this.numberOfErrorChars = 0;
+    this.errorChars = new Array<string>();
+    this.errorIndexes = new Array<number>();
     this.index = 0;
     this.typedText = '';
   }
@@ -40,10 +46,13 @@ export class TypingDashboardComponent implements OnInit {
     if (!this.isRunning || this.index >= this.inputText.length) {
       return;
     } else if (event.key === Key.Escape) {
-      this.stopTyping();
+      this.quitTyping();
     } else if (event.key === Key.Backspace) {
       this.index --;
       this.typedText = this.typedText.substring(0, this.index);
+      if (this.errorIndexes && this.errorIndexes[this.errorIndexes.length - 1] === this.index) {
+        this.errorIndexes.pop();
+      }
     } else if (Object.keys(IgnoreKey).includes(event.key)) {
       return;
     } else {
@@ -52,19 +61,18 @@ export class TypingDashboardComponent implements OnInit {
         this.startTyping();
       }
 
-      const keyTyped = event.key;
-      if (keyTyped !== this.inputText.charAt(this.index)) {
-        this.numberOfErrorChars ++;
-      } else if (keyTyped === Key.Enter) {
-        this.stopTyping();
-      } else {
-        this.typedText += keyTyped;
-        this.index ++;
+      const char = event.key;
+      this.typedText += char;
+      if (char !== this.inputText.charAt(this.index)) {
+        this.errorChars.push(char);
+        this.errorIndexes.push(this.index);
+        this.errorIndexEvent.emit(this.errorIndexes);
       }
+      this.index ++;
 
-      // Automatically stop timing if reaching the end of sample text
+      // Stop timing if reaching the end of the sample text
       if (this.index === this.inputText.length) {
-        this.stopTyping();
+        this.quitTyping();
       }
     }
   }
@@ -76,14 +84,19 @@ export class TypingDashboardComponent implements OnInit {
     this.timerComponent.start();
     this.wpm = 0;
     this.index = 0;
-    this.numberOfErrorChars = 0;
+    this.errorChars.length = 0;
+    this.errorIndexes.length = 0;
     this.typedText = '';
   }
 
-  public stopTyping(): void {
+  public quitTyping(): void {
     this.timerComponent.stop();
     const elapsedTime = this.timerComponent.getTimeElapsed();
     this.computeTypingSpeed(elapsedTime);
+  }
+
+  public formatText(text: string): string {
+    return Utils.highlightText(text, this.errorIndexes);
   }
 
   /**
