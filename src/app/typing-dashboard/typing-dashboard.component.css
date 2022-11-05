@@ -4,20 +4,22 @@
 }
 
 .dashboard .terminal-header {
+  align-items: center;
   background-color: var(--app-color);
   border-radius: 6px 6px 0 0;
   color: #ffffff;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   height: 35px;
-  line-height: 2rem;
-  text-indent: 10px;
+  padding: 0 10px;
 }
 
 .dashboard .terminal-header .title {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
   font-weight: 700;
+  line-height: 2rem;
 }
 
 .dashboard .terminal-header .notes {
@@ -30,7 +32,6 @@
 .dashboard .terminal-header .right-img {
   margin-left: auto;
   margin-right: 16px;
-  padding: 3px 0;
 }
 
 .dashboard .terminal-window {
@@ -49,11 +50,11 @@
 }
 
 .still-cursor {
-  color: var(--app-color);
+  background-color: transparent;
 }
 
 .blink-cursor {
-  color: var(--app-color);
+  background-color: var(--app-color);
   animation: blink-animation 1s steps(5, start) infinite;
   -webkit-animation: blink-animation 1s steps(5, start) infinite;
 }
