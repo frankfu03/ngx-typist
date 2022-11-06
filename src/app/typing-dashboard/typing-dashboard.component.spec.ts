@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TypingDashboardComponent } from './typing-dashboard.component';
+import { LoadingComponent } from '../shared/loading/loading.component';
+import { TimerComponent } from './../timer/timer.component';
 
 describe('TypingDashboardComponent', () => {
   let component: TypingDashboardComponent;
@@ -8,7 +10,11 @@ describe('TypingDashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TypingDashboardComponent ]
+      declarations: [
+        TypingDashboardComponent,
+        LoadingComponent,
+        TimerComponent,
+      ]
     })
     .compileComponents();
 

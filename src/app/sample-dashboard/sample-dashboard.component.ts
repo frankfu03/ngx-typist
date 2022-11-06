@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Key } from '../shared/global/key';
+import { Utils } from '../shared/global/utils';
 
 @Component({
   selector: 'app-sample-dashboard',
@@ -10,18 +12,17 @@ export class SampleDashboardComponent implements OnInit {
   @Input()
   public inputText: string = '';
 
-  private totalNumberOfChars: number;
-  private numberOfErrorChars: number;
-  private index: number;
+  @Input()
+  public errorIndexes: number[] = [];
+
 
   constructor() {
-    this.totalNumberOfChars = 0;
-    this.numberOfErrorChars = 0;
-    this.index = 0;
   }
 
   ngOnInit(): void {
-    this.totalNumberOfChars = this.inputText.length;
   }
 
+  public formatText(text: string): string {
+    return Utils.highlightText(text, this.errorIndexes);
+  }
 }

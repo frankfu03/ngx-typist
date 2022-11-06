@@ -1,6 +1,6 @@
 .dashboard {
-  margin: 10px 10px 0 10px;
-  padding: 0;
+  margin: 0;
+  padding: 16px;
 }
 
 .dashboard .terminal-header {
@@ -19,13 +19,14 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  line-height: 2rem;
+  line-height: 1rem;
 }
 
 .dashboard .terminal-header .notes {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1rem;
   font-weight: normal;
+  line-height: 1rem;
   margin-left: 10px;
 }
 
@@ -49,10 +50,6 @@
   overflow-y: auto;
 }
 
-.still-cursor {
-  background-color: transparent;
-}
-
 .blink-cursor {
   background-color: var(--app-color);
   animation: blink-animation 1s steps(5, start) infinite;
@@ -66,5 +63,11 @@
 @-webkit-keyframes blink-animation {
   to {
     visibility: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 10px;
   }
 }
