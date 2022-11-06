@@ -1,11 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ToolbarComponent } from './shared/toolbar/toolbar.component';
+import { FooterComponent} from './shared/footer/footer.component';
+import { SampleDashboardComponent } from './sample-dashboard/sample-dashboard.component';
+import { TypingDashboardComponent } from './typing-dashboard/typing-dashboard.component';
+import { LoadingComponent } from './shared/loading/loading.component';
+import { TimerComponent } from '././timer/timer.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ToolbarComponent,
+        FooterComponent,
+        LoadingComponent,
+        SampleDashboardComponent,
+        TimerComponent,
+        ToolbarComponent,
+        TypingDashboardComponent,
       ],
     }).compileComponents();
   });
@@ -16,16 +29,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as an application title 'ngx-typist'`, () => {
+  it(`should have as an application title 'ngx typist'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.appTitle).toEqual('ngx-typist');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ngx-typist app is running!');
+    expect(app.appTitle).toEqual('ngx typist');
   });
 });
