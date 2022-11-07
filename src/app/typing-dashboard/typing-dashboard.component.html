@@ -11,7 +11,8 @@
     </span>
     <app-timer></app-timer>
   </div>
-  <div class="terminal-window" [innerHTML]="formatText(typedText)">
+  <div class="terminal-window">
+    <span [innerHTML]="formatText(typedText)"></span>
     <span class="blink-cursor" *ngIf="isRunning">&nbsp;</span>
   </div>
 </div>
