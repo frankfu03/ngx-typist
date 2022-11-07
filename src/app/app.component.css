@@ -1,6 +1,7 @@
 :host {
   --toolbar-height: 70px;
   --footer-height: 35px;
+  --main-body-height: calc(100vh - var(--toolbar-height) - var(--footer-height));
   --app-color: rgb(0, 82, 204);
   flex: 1 1 100%;
   display: flex;
@@ -8,8 +9,8 @@
 }
 
 .main-body {
-  height: calc(100vh - var(--toolbar-height) - var(--footer-height));
-  min-height: calc(100vh - var(--toolbar-height) - var(--footer-height));
+  height: var(--main-body-height);
+  min-height: var(--main-body-height);
   margin: 0;
   overflow-y: auto;
   padding: 0;
