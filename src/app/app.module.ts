@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
@@ -22,6 +24,8 @@ import { TimerComponent } from './timer/timer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule,
     BsDropdownModule.forRoot(),
   ],
   providers: [],

@@ -1,11 +1,18 @@
 :host {
-  --toolbar-height: 70px;
+  --toolbar-height: 60px;
   --footer-height: 35px;
+  --control-panel-height: 54px;
   --main-body-height: calc(100vh - var(--toolbar-height) - var(--footer-height));
   --app-color: rgb(0, 82, 204);
   flex: 1 1 100%;
   display: flex;
   flex-flow: column;
+}
+
+@media (max-width: 600px) {
+  :host {
+    --control-panel-height: 40px;
+  }
 }
 
 .main-body {

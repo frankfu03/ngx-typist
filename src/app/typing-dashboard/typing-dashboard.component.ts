@@ -16,7 +16,6 @@ export class TypingDashboardComponent implements OnInit {
   @Input()
   public inputText: string = '';
 
-  @Input()
   public isRunning: boolean = false;
 
   @Output()
@@ -78,6 +77,14 @@ export class TypingDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  public typingSwitch(): void {
+    this.isRunning = !this.isRunning;
+  }
+
+  public getButtonName(): string {
+    return this.isRunning ? "Stop Typing" : "Start Typing"
   }
 
   public startTyping(): void {

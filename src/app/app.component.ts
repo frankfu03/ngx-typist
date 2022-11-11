@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appTitle = 'ngx typist';
-  public isRunning = false;
   public errorIndexes: number[] = [];
 
   public inputText = `As always, I would recommend you create a new module only for the directive.
@@ -27,10 +26,6 @@ export class AppComponent {
 
   So now we move on to the actual logic which we can write in the ngOnChanges lifecycle hook.
   So when our search term changes, we can update the highlights.`;
-
-  public toggleTyping(running: boolean): void {
-    this.isRunning = running;
-  }
 
   public getTypingInfo(event: number[]): void {
     this.errorIndexes = event;
