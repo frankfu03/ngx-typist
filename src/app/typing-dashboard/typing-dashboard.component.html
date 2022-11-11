@@ -1,16 +1,20 @@
-<div class="dashboard">
+<div class="control-panel">
+  <span>
+    <button class="btn btn-primary" (click)="typingSwitch()">{{getButtonName()}}</button>
+  </span>
   <div class="terminal-header">
-    <span class="title">Typing Window</span>
     <span class="notes">
-      (Typed: {{typedText.length}};
-      Errors: {{errorChars.length}};
-      WPM: {{ wpm }})
+      Typed: {{ typedText.length }};
+      Errors: {{ errorChars.length }};
+      WPM: {{ wpm }}
     </span>
-    <span class="right-img">
-      <app-loading [isRunning]="isRunning"></app-loading>
-    </span>
-    <app-timer></app-timer>
   </div>
+  <span class="right-img">
+    <app-loading [isRunning]="isRunning"></app-loading>
+  </span>
+  <app-timer></app-timer>
+</div>
+<div class="dashboard">
   <div class="terminal-window">
     <span [innerHTML]="formatText(typedText)"></span>
     <span class="blink-cursor" *ngIf="isRunning">&nbsp;</span>

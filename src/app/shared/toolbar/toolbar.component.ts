@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,24 +11,13 @@ export class ToolbarComponent implements OnInit {
   @Input()
   public title: string = '';
 
-  @Output()
-  runningEvent = new EventEmitter<boolean>();
-
-  public isRunning: boolean = false;
-
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.isRunning = false;
   }
 
-  public typingSwitch(): void {
-    this.isRunning = !this.isRunning;
-    this.runningEvent.emit(this.isRunning);
+  public gotoPage(path: string): void {
+    this.router.navigate([path]);
   }
-
-  public getButtonName(): string {
-    return this.isRunning ? "Stop Typing" : "Start Typing"
-  }
-
 }

@@ -25,13 +25,58 @@
   padding-top: 12px;
 }
 
-.toolbar .right-panel {
+.toolbar .align-right {
   margin-left: auto;
 }
 
-.toolbar .btn {
-  background-color: #ffffff;
-  color: var(--app-color);
+.typing-mode-menu {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 36px;
+  height: 36px;
+  padding: 0 20px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.typing-mode:hover,
+.typing-mode:focus {
+  cursor: pointer;
+  color: #006983;
+  border-color: #006983;
+  background-color: #e5f5e0;
+}
+
+.dropdown-menu {
+  border-color: #00441b;
+  font-size: 15px;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  color: #333333;
+  padding: 5px 20px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+  background-color: #e5f5e0;
+  color: #2a2aff;
+  cursor: pointer;
+}
+
+.dropdown-menu .divider {
+  background-color: #a0a0a0;
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
 }
 
 @media (max-width: 600px) {

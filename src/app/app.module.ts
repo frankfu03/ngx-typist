@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
 import { TypingDashboardComponent } from './typing-dashboard/typing-dashboard.component';
@@ -17,10 +20,13 @@ import { TimerComponent } from './timer/timer.component';
     LoadingComponent,
     ToolbarComponent,
     FooterComponent,
-    TimerComponent
+    TimerComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
